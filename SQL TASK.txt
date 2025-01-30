@@ -1,0 +1,128 @@
+
+
+Task: Advanced NFT Analytics and System Design Challenge**
+
+Context:
+
+You are tasked with analyzing NFT transactions and designing a data pipeline and dashboard for a blockchain analytics platform. This platform must handle complex queries and visualize the results in a **Jupyter Notebook** environment.
+
+
+ **Part 1: Advanced Analytical SQL Queries**
+
+Requirements:
+1. Create a SQLite database (`nft_transactions.db`) and define a table named `nft_transactions` with the following schema:
+   ```sql
+   CREATE TABLE nft_transactions (
+       transaction_id TEXT PRIMARY KEY,
+       contract_address TEXT,
+       token_id TEXT,
+       buyer_address TEXT,
+       seller_address TEXT,
+       price REAL,
+       chain_id TEXT,
+       timestamp DATETIME
+   );
+   ```
+2. Populate the table with sample data (at least 50 rows) representing realistic NFT transactions. The dataset should include multiple `contract_address` and `chain_id` values.
+
+ Queries to Implement in the Notebook:
+1. **Dynamic Trading Patterns**:  
+   Identify the most active trading hour for each contract over the past 7 days.  
+   Display a table with `contract_address`, the hour with the most transactions, and the count.
+
+2. **NFT Liquidity Analysis**:  
+   Compute liquidity for each contract as `total trade value / unique NFTs traded`.  
+   Display the top 3 contracts by liquidity in a table.
+
+3. **Rarity & Value Correlation**:  
+   For NFTs traded more than once, calculate the average trade price and standard deviation of prices.  
+   Display NFTs with a price standard deviation exceeding 30% of the average price.
+
+4. **Cross-Chain Profitability**:  
+   Identify the top 5 sellers with the highest profits from NFTs sold across chains.  
+   Include seller address, total profit, number of chains, and chain with the highest profit.
+
+5. **Real-Time Outlier Detection**:  
+   Detect transactions with prices >3 times the median price in the last 24 hours.  
+   Display outlier transactions in a table.
+
+Implementation:
+- Use SQLite to execute these queries.
+- Display the query results in Jupyter Notebook cells using `pandas.DataFrame`.
+
+
+ **Part 2: Data Pipeline Design**
+
+ Requirements:
+1. **Data Generation**:  
+   Write a Python script to simulate NFT transaction data and populate the SQLite database.  
+   Use libraries like `faker` or manually define data to simulate realistic scenarios.
+
+2. **Pipeline Architecture**:  
+   Design a pipeline to:
+   - Ingest NFT data daily into the SQLite database.
+   - Transform data to create summary tables (e.g., daily sales, unique traders).
+   - Archive old transactions to optimize storage.
+
+3. **Real-Time Updates**:  
+   Implement a Python function to insert real-time transactions into SQLite, simulating a live feed.  
+
+Part 3: Real-Time Dashboard in Jupyter Notebook**
+
+Requirements:
+Build visualizations based on the SQLite database. Use the following tools:
+- **`pandas`**: For querying and manipulating data.
+- **`matplotlib`/`seaborn`/`plotly`**: For charts.
+- **`folium` or `geopandas`**: For maps (if chain data includes geolocation-like attributes).
+
+Visualizations:
+
+1. **Transaction Density Heatmap**:  
+   - Display transaction density by `chain_id` and time range using a heatmap.
+   
+2. **Time-Series Chart**:  
+   - Plot total transaction volume and trade value over time for a selected chain.
+
+3. **Top Movers Bar Chart**:  
+   - Show the top 5 contracts by transaction count in a given time range.
+
+4. **Outlier Transactions Scatter Plot**:  
+   - Plot transaction prices over time, highlighting outliers in a different color.
+
+ Implementation:
+- Use widgets (e.g., `ipywidgets`) for user inputs (e.g., `chain_id`, time range).
+- Provide interactive filtering capabilities in the visualizations.
+
+---
+
+ **Deliverables**
+
+1. **Jupyter Notebook**:
+   - Contains all SQL queries, table creation, and data population.
+   - Displays query results directly in cells using `pandas`.
+   - Includes visualizations for Part 3.
+
+2. **SQLite Database**:
+   - Provide the populated `nft_transactions.db` file.
+
+3. **Pipeline Script**:
+   - Submit a Python script for data simulation and real-time updates to the SQLite database.
+
+4. **Documentation**:
+   - Include instructions for running the notebook and generating the pipeline.
+
+
+### **Evaluation Criteria**
+
+1. **SQL Query Complexity**:  
+   - Queries should showcase advanced techniques (e.g., window functions, subqueries, and aggregate functions).
+   
+2. **Notebook Usability**:  
+   - The notebook should be interactive, well-organized, and provide meaningful visualizations.
+
+3. **Pipeline Feasibility**:  
+   - The pipeline should demonstrate a clear and scalable workflow.
+
+4. **Visualization Quality**:  
+   - Charts and maps should be informative, aesthetically pleasing, and interactive.
+

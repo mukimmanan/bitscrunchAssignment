@@ -1,0 +1,17 @@
+1. Using DockerCompose
+- Go to the folder in which dockerfile is residing and use -> docker-compose up -d
+- This way your jupyter will be up and will be listing to port 8888
+- Token value: bitscrunch
+- You won't need to do any changes in the code and can start executing the docker file.
+
+
+2. Not using Dockerfile
+- You will need to update nft_transaction.db location in Utils.ipynb file and add the absolute path to the same.
+
+3. Libraries Installation
+- Install the required library for this assignment. For this go to Requirements.ipynb file and run the cell.
+
+4. Table Preparation Folder
+- It has 2 notebooks:
+    1. Creation.ipynb - For creating the tables
+    2.
