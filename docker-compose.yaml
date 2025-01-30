@@ -1,0 +1,11 @@
+version: "3.0"
+services:
+  jupyter:
+    image: jupyter/base-notebook
+    container_name: jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./:/home/jovyan/bitscrunch/
+    environment:
+      - JUPYTER_TOKEN=bitscrunch
