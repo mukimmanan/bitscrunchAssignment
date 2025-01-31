@@ -14,4 +14,16 @@
 4. Table Preparation Folder
 - It has 2 notebooks:
     1. Creation.ipynb - For creating the tables
-    2.
+    2. Add Sample Data - To add some code generated sample data.
+
+5. Part 1
+- Contains all the queries inside Queries Notebook
+
+6. Part 2
+- Dummy Data Notebook has some static token_ids, chain_ids, addresses, etc.
+- Generate Transactions has the logic behind generating new transactions.
+- Solution Notebook has the pipeline that will ingest data into sqlite db in realtime (Click on Run all and ingestion pipeline will start).
+- Solution notebook will also push/update data in summary table.
+
+7. Part3
+- Contains the Visualization
